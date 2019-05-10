@@ -71,7 +71,7 @@ Once we are sure that the component is a painting, we compute its characteristic
 Now we can search for the corners of the painting. To obtain that we first apply the Canny algorithm to compute the borders of the mask, and then we used the Probabilistic Hough Transform to get the segments representing straight lines. Once found these segments, we group them in two groups, based on their inclinations, with the KMeans algorithm, in this way we get groups with almost parallel lines.
 
 Inside these two groups we search for the lines that are really parallel and we select the two that are further away from each other. In this way we obtain two groups of parallel lines with the maximum distance that may serve as the sides of the rectangle.
-
+ 
 After found the 4 sides, we compute the intersection between them. These 4 intersections serves as the corners of the painting. This is not a problem even for paintings parts since we draw a black border around them to be to use this algorithm.
 
 Using these 4 corners, we are now able to extract the painting from the source image and to compute an approximation of its real size in 3D using the algorithm explained in section 2.4. Once done that, we rectify the painting.
