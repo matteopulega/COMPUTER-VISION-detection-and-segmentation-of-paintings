@@ -22,5 +22,4 @@ Radial distortion is a very big problem for our approach because it can make str
 To correct the radial distortion we implemented the HTRDC algorithm [1] which uses the Hough Transform for straight lines in order to find the best distortion coefficient k that will be used to correct the image.
 The resulting image will be cropped since not all original coordinates will be mapped in the undistorted image (Figure 1).
 This is an iterative method which will stop when the range of k in which to search is lower than a fixed threshold. Since we have some prior knowledge, we narrow the range from 0 to 1*10-4, causing the algorithm to converge faster.
-   ![alt text](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/01.jpg)
-   ![alt text](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/02.jpg)
+![Figure 1](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/01.jpg) ![Figure 1](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/02.jpg)
