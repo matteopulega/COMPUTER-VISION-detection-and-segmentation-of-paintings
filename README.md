@@ -65,3 +65,5 @@ The final results are a list of all the paintings present in the picture and a m
 
 ## RESULTS
 Following the steps described in section 3, the series of operations necessary for finding paintings is shown below. The process shown starts with the undistorted image because the operation of the HTRDC is already presented in Section 2.1.
+
+![Figure 2](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/04.PNG)
