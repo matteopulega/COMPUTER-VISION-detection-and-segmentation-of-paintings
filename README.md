@@ -67,3 +67,32 @@ The final results are a list of all the paintings present in the picture and a m
 Following the steps described in section 3, the series of operations necessary for finding paintings is shown below. The process shown starts with the undistorted image because the operation of the HTRDC is already presented in Section 2.1.
 
 ![Figure 2](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/04.PNG)
+
+After detecting regular pictures and picture parts, as described in section 3, it is possible to create a defined segmentation and generate an image in which the paintings are clearly distinguishable from the rest of the frame. Picture parts and regular pictures are characterized by different colors.
+
+![Figure 2](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/05.PNG)
+
+The algorithm was tested with a set of 50 images, frames from different clips of the Estense gallery. In addition to paintings, some frames contain statues, doors, people in front of targets, paintings that are very close to each other or in a perspective view. To evaluate the classification of the algorithm, we analyzed the results and classified as follows:
+•	a correct identification of a painting is considered a True Positive (TP);
+•	when a picture is not recognized it is a False Negative (FN);
+•	if a picture is identified but is not actually present, this is classified as a False Positive (FP).
+Considering any possible errors of detection and segmentation, we used these evaluation rules: when two or more paintings of the same category (regular picture or picture parts) are identified under a single but correct detection, then the evaluation is divided into 0.5 as TP and 0.5 as FN for each painting, for the final count of recognized paintings. Instead, if the category is wrong, we will consider each painting as a miss, that is a 1 FN.
+With all the TPs, FPs and FNs we calculated for each frame the Accuracy, number of correct predictions divided by the total number of predictions, the Recall, how many paintings were identified with respect to all those that should have been identified, and the Precision, how many paintings identified are really paintings. The goal of the algorithm is to identify paintings, not to identify where there are no paintings: so, the True Negatives (TN) are not considered and set them to 0.
+
+![Figure 2](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/06.PNG)
+
+The table represents the averages of the different Accuracy, Precision, Recall and the calculation of the F1 score, which takes into consideration Precision and Recall of the test, keeping Regular Pictures and Picture Parts separated.
+
+![Figure 2](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/07.PNG)
+
+
+## 5.CONCLUSIONS
+The proposed pipeline is used to detect paintings inside the Estense gallery. It deals very well when there is not a strong illumination gradient, which is a problem especially with corridors.
+We believe that this pipeline is robust enough to be the base of a more sophisticated method, for example is possible to use this work to annotate images that will be used to train a Neaural Network, which obviously will perform better.
+
+## 6.REFERENCES
+[1] R. Cucchiara, C. Grana, A. Prati, R. Vezzani, “A Hough Transform-based method for radial lens distortion correction”, 12th International Conference on Image Analysis and Processing, January 2003
+[2] C. Grana, D. Borghesani, R. Cucchiara, “Optimized Block-based Connected Components Labeling with Decision Trees”, IEEE Transactions on Image Processing, vol. 19, issue 6, June 2010
+[3] “Hough Transform and Probabilistic Hough Transform”, https://docs.opencv.org/4.1.0/d9/db0/tutorial_hough_lines.html
+[4] C. Galamhos, J. Matas, J. Kittler, “Progressive Probabilistic Hough Transform for line detection”, 1999 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, June 1999
+[5] “Totally Arbitrary 3D Texture Mapping”, https://web.archive.org/web/20160418004152/http://freespace.virgin.net/hugo.elias/graphics/x_persp.htm
