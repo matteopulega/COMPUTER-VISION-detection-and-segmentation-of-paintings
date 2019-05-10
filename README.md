@@ -110,7 +110,11 @@ We believe that this pipeline is robust enough to be the base of a more sophisti
 
 ## 6.REFERENCES
 [1] R. Cucchiara, C. Grana, A. Prati, R. Vezzani, “A Hough Transform-based method for radial lens distortion correction”, 12th International Conference on Image Analysis and Processing, January 2003
+
 [2] C. Grana, D. Borghesani, R. Cucchiara, “Optimized Block-based Connected Components Labeling with Decision Trees”, IEEE Transactions on Image Processing, vol. 19, issue 6, June 2010
+
 [3] “Hough Transform and Probabilistic Hough Transform”, https://docs.opencv.org/4.1.0/d9/db0/tutorial_hough_lines.html
+
 [4] C. Galamhos, J. Matas, J. Kittler, “Progressive Probabilistic Hough Transform for line detection”, 1999 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, June 1999
+
 [5] “Totally Arbitrary 3D Texture Mapping”, https://web.archive.org/web/20160418004152/http://freespace.virgin.net/hugo.elias/graphics/x_persp.htm
