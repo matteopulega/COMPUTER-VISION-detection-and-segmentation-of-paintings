@@ -1,6 +1,14 @@
 # PAINTING DETECTION AND SEGMENTATION
 A Computer Vision problem: detection and segmentation of paintings, without Convolutional Neural Networks
 
+## CONTENTS
+1. Introfuction
+2. Related works
+3. Approach
+4. Results
+5. Conclusions
+6. References
+
 ## 1.INTRODUCTION
 The aim of our work is to detect paintings inside frames captured in a museum. Since it’s an indoor situation, the luminance condition is not variable. But images presented a large illumination gradient with which we have to deal.
 
