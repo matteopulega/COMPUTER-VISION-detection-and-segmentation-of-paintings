@@ -67,10 +67,11 @@ In this section we will explain the approach and how we put together what we saw
 Since the image is distorted, the first thing we do is to apply the HTRDC method to obtain the radial distortion and correct the image. Pictures were taken with different cameras, so we do not know a priori with which camera the photo is taken and we do not have all the cameras, so we can not compute the intrinsic and all the extrinsic parameters, but with this method we can at least compute the radial distortion. Moreover, this method does not require the knowledge of the camera since it is completely based on the information provided by the image, so we can insert it in the execution of the program to compute the radial distortion on-line.
 
 Once we have obtained the undistorted version of the image, we convert it into the grayscale version. This grayscale is blurred using a Gaussian Kernel with a strong standard deviation to delete the details of the paintings and of paintings’ frames.
-
 Even though we are in an indoor situation, pictures present a strong illumination gradient, therefore images cannot be assumed bimodal. Because of this we can not apply Otsu Binarization, but we decided to use an adaptive threshold. The adaptive threshold leaves some details of the items, to reduce this noise we apply some morphological operations in order to obtain thinner components.
-
 After that, we compute the connected components of the image and, for each component, we compute the convex hull, which will be filled to form a mask of the entire component.
+
+![Figure 5](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/imageProcessing.PNG)
+![Figure 1](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/labeling.PNG)
 
 At this point we do not know if the component is actually a painting or some other item presents in the museum. To discriminate them we use an entropy-based method. We extract the component from the colored image using its mask, and then we compute the histogram. Histogram of paintings will be variegated, therefore their entropy will be high compared to information labels or statues. We computed a lower threshold below which we are sure that the component is not a painting, and an upper threshold above which we are sure that the component is a painting. We have a gray region in which we are not sure if the component is a painting or not, to overcome this problem we used the mean of the grayscale block. Paintings will have a low mean since they are mostly black, so we used the same criteria used with the entropy.
 
