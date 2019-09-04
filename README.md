@@ -77,8 +77,9 @@ At this point we do not know if the component is actually a painting or some oth
 Once we are sure that the component is a painting, we compute its characteristics. In images we could have both regular paintings, paintings that are completely contained inside the image, and part of paintings. We saw that, if the the painting is not fully contained in the image, it is located on one of the four border of the image. Therefore, if we sum vertically and horizontally the component mask, if there is a painting on borders the sum at the borders will be different from zero. So components which have this characteristics are marked as paintings parts. For those we draw a 4 pixel black border in order to have always 4 sides.
 
 Now we can search for the corners of the painting. To obtain that we first apply the Canny algorithm to compute the borders of the mask, and then we used the Probabilistic Hough Transform to get the segments representing straight lines. Once found these segments, we group them in two groups, based on their inclinations, with the KMeans algorithm, in this way we get groups with almost parallel lines.
-
 Inside these two groups we search for the lines that are really parallel and we select the two that are further away from each other. In this way we obtain two groups of parallel lines with the maximum distance that may serve as the sides of the rectangle.
+
+![Figure 5](https://github.com/matteopulega/Paintings-Detection-and-Segmentation/blob/master/otherImages/1222.PNG)
  
 After found the 4 sides, we compute the intersection between them. These 4 intersections serves as the corners of the painting. This is not a problem even for paintings parts since we draw a black border around them to be to use this algorithm.
 
