@@ -9,6 +9,11 @@ A Computer Vision problem: detection and segmentation of paintings, without Conv
 5. Conclusions
 6. References
 
+## CO-WORKERS
+* https://github.com/eMDi94 
+* https://github.com/damianocaprari
+
+
 ## 1.INTRODUCTION
 The aim of our work is to detect paintings inside frames captured in a museum. Since it’s an indoor situation, the luminance condition is not variable. But images presented a large illumination gradient with which we have to deal.
 
